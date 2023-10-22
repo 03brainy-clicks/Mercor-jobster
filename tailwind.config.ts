@@ -8,11 +8,17 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
+      colors:{
+       "jobster":{
+          "indigo":"#4F46E5",
+          "indigo-light":"#6366F1",
+          "indigo-extra-light":"#818CF8",
+          "back":"#111827",
+          "gray":"#6B7280",
+          "gray-light":"#9CA3AF",
+          "gray-extra-light":"#D1D5DB",
+        }
+      }
     },
   },
   plugins: [],
