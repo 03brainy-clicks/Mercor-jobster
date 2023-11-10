@@ -1,14 +1,13 @@
-"use client";
-import Image from "next/image";
+"use client"
 import React, { useEffect, useRef } from "react";
-import Typed from "typed.js";
+import Typed, { TypedOptions } from "typed.js";
 
 interface TypedProps {
-  strings: String[];
-  typeSpeed?: Number;
-  backSpeed?: Number;
-  backDelay?: Number;
-  showCursor?: Boolean;
+  strings: string[];
+  typeSpeed?: number;
+  backSpeed?: number;
+  backDelay?: number;
+  showCursor?: boolean;
   loop?: boolean;
 }
 
@@ -20,17 +19,21 @@ const TypedAnimation = ({
   backDelay = 100,
   loop = false,
 }: TypedProps) => {
-  const el = useRef(null);
+  const el = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    const typed: Typed = new Typed(el.current, {
-      strings: strings,
-      typeSpeed: typeSpeed,
-      backSpeed: backSpeed,
-      backDelay: backDelay,
-      showCursor: showCursor,
-      loop: loop,
-    });
+    if (!el.current) return;
+
+    const options: TypedOptions = {
+      strings,
+      typeSpeed,
+      backSpeed,
+      backDelay,
+      showCursor,
+      loop,
+    };
+
+    const typed = new Typed(el.current, options);
 
     return () => {
       typed.destroy();
