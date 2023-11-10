@@ -6,11 +6,11 @@ import Image from "next/image";
 
 const page = () => {
   return (
-    <div className="w-screen h-screen flex items-center justify-center ">
+    <div className="w-full h-screen flex items-center justify-center">
       <div className="fixed top-8 left-8">
       <Image src={LogoSmall} alt="logosmall" className="w-10" />
       </div>
-      <div className="p-12 lg:w-1/4 shadow-lg rounded-lg flex gap-12 flex-col">
+      <div className="p-12 lg:w-1/3 shadow-lg rounded-lg flex gap-12 flex-col">
         <div>
           {" "}
           <Link href="/" className="text-xs flex items-center cursor-pointer">
